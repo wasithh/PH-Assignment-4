@@ -21,185 +21,427 @@
         <div class="flex flex-col sm:flex-row gap-6 w-full">
           <div class="stat bg-base-100 shadow rounded-box flex-1">
             <div class="stat-title">Total</div>
-            <div class="stat-value text-primary" id="count-total">8</div>
+            <div class="stat-value text-primary" id="total-count">0</div>
           </div>
 
           <div class="stat bg-base-100 shadow rounded-box flex-1">
             <div class="stat-title">Interview</div>
-            <div class="stat-value text-success" id="count-interview">0</div>
+            <div class="stat-value text-success" id="interview-count">0</div>
           </div>
 
           <div class="stat bg-base-100 shadow rounded-box flex-1">
             <div class="stat-title">Rejected</div>
-            <div class="stat-value text-error" id="count-rejected">0</div>
+            <div class="stat-value text-error" id="rejected-count">0</div>
           </div>
         </div>
       </section>
     </header>
     <hr class="w-full my-8 border-t-1 border-1 border-gray-300" />
-    <main>
-      <section class="mt-12 w-full">
-  
-  <div class="flex justify-between items-center mb-4">
-    <h2 class="text-2xl font-bold text-[#1e293b]">Available Jobs</h2>
-    <span class="text-gray-500 font-medium" id="total-jobs-text">8 jobs</span>
-  </div>
-
-  <div class="flex gap-3 mb-6">
-    <button class="btn btn-sm btn-primary px-6 font-normal normal-case">All</button>
-    <button class="btn btn-sm bg-white border-gray-200 text-gray-600 hover:bg-gray-50 px-6 font-normal normal-case shadow-sm">Interview</button>
-    <button class="btn btn-sm bg-white border-gray-200 text-gray-600 hover:bg-gray-50 px-6 font-normal normal-case shadow-sm">Rejected</button>
-  </div>
-
-  <div class="flex flex-col gap-4" id="job-list">
-    
-    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
-      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-      </button>
-
-      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
-      <p class="text-gray-500 mb-2">React Native Developer</p>
-      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
-      
-      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
-      
-      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-      
-      <div class="flex gap-3">
-        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
-        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
-      </div>
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-2xl font-bold text-[#1e293b]">Available Jobs</h2>
+      <span class="text-gray-500 font-medium" id="total-jobs-text">8 jobs</span>
     </div>
-    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
-      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+    <div class="flex gap-3 mb-6">
+      <button
+        onclick="toggleStyle('all-btn')"
+        id="all-btn"
+        class="btn btn-sm btn-primary px-6 font-normal normal-case"
+      >
+        All
       </button>
-
-      <h3 class="text-lg font-bold text-[#1e293b]">WebFlow Agency</h3>
-      <p class="text-gray-500 mb-2">Web Designer & Developer</p>
-      <p class="text-sm text-gray-400 mb-4">LA,CA • Part-time • $30,000 - $75,000</p>
-      
-      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
-      
-      <p class="text-sm text-gray-600 mb-6">Create stunning visuals for us and our team. Must have portfolio and experience with modern web design trends.</p>
-      
-      <div class="flex gap-3">
-        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
-        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
-      </div>
-    </div>
-    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
-      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      <button
+        onclick="toggleStyle('interview-btn')"
+        id="interview-btn"
+        class="btn btn-sm bg-white border-gray-200 text-gray-600 hover:bg-gray-50 px-6 font-normal normal-case shadow-sm"
+      >
+        Interview
       </button>
-
-      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
-      <p class="text-gray-500 mb-2">React Native Developer</p>
-      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
-      
-      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
-      
-      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-      
-      <div class="flex gap-3">
-        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
-        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
-      </div>
-    </div>
-    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
-      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      <button
+        onclick="toggleStyle('rejected-btn')"
+        id="rejected-btn"
+        class="btn btn-sm bg-white border-gray-200 text-gray-600 hover:bg-gray-50 px-6 font-normal normal-case shadow-sm"
+      >
+        Rejected
       </button>
-
-      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
-      <p class="text-gray-500 mb-2">React Native Developer</p>
-      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
-      
-      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
-      
-      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-      
-      <div class="flex gap-3">
-        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
-        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
-      </div>
     </div>
-    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
-      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-      </button>
 
-      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
-      <p class="text-gray-500 mb-2">React Native Developer</p>
-      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
-      
-      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
-      
-      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-      
-      <div class="flex gap-3">
-        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
-        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+    <!-- Filtered Card -->
+    <section id="filtered-section" class="hidden"></section>
+
+    <main id="all-cards" class="space-y-6">
+      <!-- Card-1  -->
+
+      <div
+        class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group"
+      >
+        <button
+          class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"
+        ></button>
+
+        <h3 class="company-name text-lg font-bold text-[#1e293b]">
+          Mobile First Corp
+        </h3>
+        <p class="job-role text-gray-500 mb-2">React Native Developer</p>
+        <p class="text-sm text-gray-400 mb-4">
+          <span class="job-location">Remote</span> •
+          <span class="job-type">Full-time</span> •
+          <span class="job-salary">$130,000 - $175,000</span>
+        </p>
+
+        <span
+          class="job-status inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4"
+          >NOT APPLIED</span
+        >
+
+        <p class="text-sm text-gray-600 mb-6">
+          Build cross-platform mobile applications using React Native. Work on
+          products used by millions of users worldwide.
+        </p>
+
+        <div class="flex gap-3">
+          <button
+            class="interview-btn-1 btn btn-sm btn-outline btn-success normal-case font-bold px-6"
+          >
+            INTERVIEW
+          </button>
+          <button
+            class="rejected-btn-1 btn btn-sm btn-outline btn-error normal-case font-bold px-6"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
-      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-      </button>
+      <!-- Card-2  -->
+      <div
+        class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group"
+      >
+        <button
+          class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"
+        ></button>
 
-      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
-      <p class="text-gray-500 mb-2">React Native Developer</p>
-      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
-      
-      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
-      
-      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-      
-      <div class="flex gap-3">
-        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
-        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+        <h3 class="company-name text-lg font-bold text-[#1e293b]">
+          WebFlow Agency
+        </h3>
+        <p class="job-role text-gray-500 mb-2">Web Designer & Developer</p>
+        <p class="text-sm text-gray-400 mb-4">
+          <span class="job-location">Remote</span> •
+          <span class="job-type">Full-time</span> •
+          <span class="job-salary">$130,000 - $175,000</span>
+        </p>
+
+        <span
+          class="job-status inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4"
+          >NOT APPLIED</span
+        >
+
+        <p class="text-sm text-gray-600 mb-6">
+          Create stunning visuals for us and our team. Must have portfolio and
+          experience with modern web design trends.
+        </p>
+
+        <div class="flex gap-3">
+          <button
+            class="interview-btn-1 btn btn-sm btn-outline btn-success normal-case font-bold px-6"
+          >
+            INTERVIEW
+          </button>
+          <button
+            class="rejected-btn-1 btn btn-sm btn-outline btn-error normal-case font-bold px-6"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
-      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-      </button>
+      <!-- Card-3  -->
+      <div
+        class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group"
+      >
+        <button
+          class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"
+        ></button>
 
-      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
-      <p class="text-gray-500 mb-2">React Native Developer</p>
-      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
-      
-      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
-      
-      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-      
-      <div class="flex gap-3">
-        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
-        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+        <h3 class="company-name text-lg font-bold text-[#1e293b]">
+          DataViz Solutions
+        </h3>
+        <p class="job-role text-gray-500 mb-2">Data Visualization Specialist</p>
+        <p class="text-sm text-gray-400 mb-4">
+          <span class="job-location">Remote</span> •
+          <span class="job-type">Full-time</span> •
+          <span class="job-salary">$130,000 - $175,000</span>
+        </p>
+
+        <span
+          class="job-status inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4"
+          >NOT APPLIED</span
+        >
+
+        <p class="text-sm text-gray-600 mb-6">
+          Transform complex data into compelling visualizations. Required
+          skills: D3.js, React, and strong analytical thinking.
+        </p>
+
+        <div class="flex gap-3">
+          <button
+            class="interview-btn-1 btn btn-sm btn-outline btn-success normal-case font-bold px-6"
+          >
+            INTERVIEW
+          </button>
+          <button
+            class="rejected-btn-1 btn btn-sm btn-outline btn-error normal-case font-bold px-6"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
-      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-      </button>
+      <!-- Card-4  -->
+      <div
+        class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group"
+      >
+        <button
+          class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"
+        ></button>
 
-      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
-      <p class="text-gray-500 mb-2">React Native Developer</p>
-      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
-      
-      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
-      
-      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-      
-      <div class="flex gap-3">
-        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
-        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+        <h3 class="company-name text-lg font-bold text-[#1e293b]">
+          CloudFirst Inc
+        </h3>
+        <p class="job-role text-gray-500 mb-2">Backend Developer</p>
+        <p class="text-sm text-gray-400 mb-4">
+          <span class="job-location">Remote</span> •
+          <span class="job-type">Full-time</span> •
+          <span class="job-salary">$130,000 - $175,000</span>
+        </p>
+
+        <span
+          class="job-status inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4"
+          >NOT APPLIED</span
+        >
+
+        <p class="text-sm text-gray-600 mb-6">
+          Design and maintain scalable backend systems using Python and AWS.
+          Work with modern DevOps practices and cloud infrastructure.
+        </p>
+
+        <div class="flex gap-3">
+          <button
+            class="interview-btn-1 btn btn-sm btn-outline btn-success normal-case font-bold px-6"
+          >
+            INTERVIEW
+          </button>
+          <button
+            class="rejected-btn-1 btn btn-sm btn-outline btn-error normal-case font-bold px-6"
+          >
+            REJECTED
+          </button>
+        </div>
       </div>
-    </div>
-   
+      <!-- Card-5  -->
+      <div
+        class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group"
+      >
+        <button
+          class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"
+        ></button>
 
+        <h3 class="company-name text-lg font-bold text-[#1e293b]">
+          Innovation Labs
+        </h3>
+        <p class="job-role text-gray-500 mb-2">UI/UX Engineer</p>
+        <p class="text-sm text-gray-400 mb-4">
+          <span class="job-location">Remote</span> •
+          <span class="job-type">Full-time</span> •
+          <span class="job-salary">$130,000 - $175,000</span>
+        </p>
+
+        <span
+          class="job-status inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4"
+          >NOT APPLIED</span
+        >
+
+        <p class="text-sm text-gray-600 mb-6">
+          Create beautiful and functional user interfaces for our suite of
+          products. Strong design skills and frontend development expertise
+          required.
+        </p>
+
+        <div class="flex gap-3">
+          <button
+            class="interview-btn-1 btn btn-sm btn-outline btn-success normal-case font-bold px-6"
+          >
+            INTERVIEW
+          </button>
+          <button
+            class="rejected-btn-1 btn btn-sm btn-outline btn-error normal-case font-bold px-6"
+          >
+            REJECTED
+          </button>
+        </div>
+      </div>
+      <!-- Card-6  -->
+      <div
+        class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group"
+      >
+        <button
+          class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"
+        ></button>
+
+        <h3 class="company-name text-lg font-bold text-[#1e293b]">
+          MegaCorp Solutions
+        </h3>
+        <p class="job-role text-gray-500 mb-2">JavaScript Developer</p>
+        <p class="text-sm text-gray-400 mb-4">
+          <span class="job-location">Remote</span> •
+          <span class="job-type">Full-time</span> •
+          <span class="job-salary">$130,000 - $175,000</span>
+        </p>
+
+        <span
+          class="job-status inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4"
+          >NOT APPLIED</span
+        >
+
+        <p class="text-sm text-gray-600 mb-6">
+          Build enterprise applications with JavaScript and modern frameworks.
+          We offer competitive compensation, health insurance, and professional
+          development opportunities.
+        </p>
+
+        <div class="flex gap-3">
+          <button
+            class="interview-btn-1 btn btn-sm btn-outline btn-success normal-case font-bold px-6"
+          >
+            INTERVIEW
+          </button>
+          <button
+            class="rejected-btn-1 btn btn-sm btn-outline btn-error normal-case font-bold px-6"
+          >
+            REJECTED
+          </button>
+        </div>
+      </div>
+      <!-- Card-7  -->
+      <div
+        class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group"
+      >
+        <button
+          class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"
+        ></button>
+
+        <h3 class="company-name text-lg font-bold text-[#1e293b]">
+          StartupXYZ
+        </h3>
+        <p class="job-role text-gray-500 mb-2">Full Stack Engineer</p>
+        <p class="text-sm text-gray-400 mb-4">
+          <span class="job-location">Remote</span> •
+          <span class="job-type">Full-time</span> •
+          <span class="job-salary">$130,000 - $175,000</span>
+        </p>
+
+        <span
+          class="job-status inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4"
+          >NOT APPLIED</span
+        >
+
+        <p class="text-sm text-gray-600 mb-6">
+          Join our fast-growing startup and work on our core platform.
+          Experience with Node.js and React required. Great benefits and equity
+          package included.
+        </p>
+
+        <div class="flex gap-3">
+          <button
+            class="interview-btn-1 btn btn-sm btn-outline btn-success normal-case font-bold px-6"
+          >
+            INTERVIEW
+          </button>
+          <button
+            class="rejected-btn-1 btn btn-sm btn-outline btn-error normal-case font-bold px-6"
+          >
+            REJECTED
+          </button>
+        </div>
+      </div>
+      <!-- Card-8  -->
+      <div
+        class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group"
+      >
+        <button
+          class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+            />
+          </svg>
+        </button>
+
+        <h3 class="company-name text-lg font-bold text-[#1e293b]">
+          TechCorp Industries
+        </h3>
+        <p class="job-role text-gray-500 mb-2">Senior Frontend Developer</p>
+        <p class="text-sm text-gray-400 mb-4">
+          <span class="job-location">Remote</span> •
+          <span class="job-type">Full-time</span> •
+          <span class="job-salary">$130,000 - $175,000</span>
+        </p>
+
+        <span
+          class="job-status inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4"
+          >NOT APPLIED</span
+        >
+
+        <p class="text-sm text-gray-600 mb-6">
+          We are looking for an experienced Frontend Developer to build scalable
+          web applications using React and TypeScript. You will work with a
+          talented team on cutting-edge projects.
+        </p>
+
+        <div class="flex gap-3">
+          <button
+            class="interview-btn-1 btn btn-sm btn-outline btn-success normal-case font-bold px-6"
+          >
+            INTERVIEW
+          </button>
+          <button
+            class="rejected-btn-1 btn btn-sm btn-outline btn-error normal-case font-bold px-6"
+          >
+            REJECTED
+          </button>
+        </div>
+      </div>
     </main>
+
+    <section id="interview" class="hidden">
+      <div
+        class="flex flex-col items-center justify-center py-32 bg-white border border-gray-100 shadow-sm rounded-xl w-full"
+      >
+        <img src="jobs.png" alt="" class="w-16 h-16 mb-4" />
+        <h3 class="text-xl font-bold text-[#1e293b] mb-2">No jobs available</h3>
+        <p class="text-sm text-gray-500">
+          Check back soon for new job opportunities
+        </p>
+      </div>
+    </section>
+    <section id="rejected" class="hidden">
+      <div
+        class="flex flex-col items-center justify-center py-32 bg-white border border-gray-100 shadow-sm rounded-xl w-full"
+      >
+        <img src="jobs.png" alt="" class="w-16 h-16 mb-4" />
+        <h3 class="text-xl font-bold text-[#1e293b] mb-2">No jobs available</h3>
+        <p class="text-sm text-gray-500">
+          Check back soon for new job opportunities
+        </p>
+      </div>
+    </section>
+
     <script src="./script.js"></script>
   </body>
 </html>
