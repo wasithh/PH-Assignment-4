@@ -6,9 +6,200 @@
     <title>Job | Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <h1>Hello</h1>
+  <body class="min-h-screen max-w-screen-lg mx-auto p-4">
+    <header>
+      <section>
+        <h1 class="text-2xl font-bold mt-12 mb-5">Job Application Tracker</h1>
+
+        <div class="flex flex-col sm:flex-row gap-6 w-full">
+          <div class="stat bg-base-100 shadow rounded-box flex-1">
+            <div class="stat-title">Total</div>
+            <div class="stat-value text-primary" id="count-total">8</div>
+          </div>
+
+          <div class="stat bg-base-100 shadow rounded-box flex-1">
+            <div class="stat-title">Interview</div>
+            <div class="stat-value text-success" id="count-interview">0</div>
+          </div>
+
+          <div class="stat bg-base-100 shadow rounded-box flex-1">
+            <div class="stat-title">Rejected</div>
+            <div class="stat-value text-error" id="count-rejected">0</div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <hr class="w-full my-8 border-t-1 border-1 border-gray-300" />
+    <main>
+      <section class="mt-12 w-full">
+  
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-bold text-[#1e293b]">Available Jobs</h2>
+    <span class="text-gray-500 font-medium" id="total-jobs-text">8 jobs</span>
+  </div>
+
+  <div class="flex gap-3 mb-6">
+    <button class="btn btn-sm btn-primary px-6 font-normal normal-case">All</button>
+    <button class="btn btn-sm bg-white border-gray-200 text-gray-600 hover:bg-gray-50 px-6 font-normal normal-case shadow-sm">Interview</button>
+    <button class="btn btn-sm bg-white border-gray-200 text-gray-600 hover:bg-gray-50 px-6 font-normal normal-case shadow-sm">Rejected</button>
+  </div>
+
+  <div class="flex flex-col gap-4" id="job-list">
+    
+    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
+      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      </button>
+
+      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
+      <p class="text-gray-500 mb-2">React Native Developer</p>
+      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
+      
+      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
+      
+      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+      
+      <div class="flex gap-3">
+        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
+        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+      </div>
+    </div>
+    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
+      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      </button>
+
+      <h3 class="text-lg font-bold text-[#1e293b]">WebFlow Agency</h3>
+      <p class="text-gray-500 mb-2">Web Designer & Developer</p>
+      <p class="text-sm text-gray-400 mb-4">LA,CA • Part-time • $30,000 - $75,000</p>
+      
+      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
+      
+      <p class="text-sm text-gray-600 mb-6">Create stunning visuals for us and our team. Must have portfolio and experience with modern web design trends.</p>
+      
+      <div class="flex gap-3">
+        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
+        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+      </div>
+    </div>
+    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
+      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      </button>
+
+      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
+      <p class="text-gray-500 mb-2">React Native Developer</p>
+      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
+      
+      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
+      
+      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+      
+      <div class="flex gap-3">
+        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
+        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+      </div>
+    </div>
+    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
+      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      </button>
+
+      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
+      <p class="text-gray-500 mb-2">React Native Developer</p>
+      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
+      
+      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
+      
+      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+      
+      <div class="flex gap-3">
+        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
+        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+      </div>
+    </div>
+    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
+      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      </button>
+
+      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
+      <p class="text-gray-500 mb-2">React Native Developer</p>
+      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
+      
+      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
+      
+      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+      
+      <div class="flex gap-3">
+        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
+        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+      </div>
+    </div>
+    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
+      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      </button>
+
+      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
+      <p class="text-gray-500 mb-2">React Native Developer</p>
+      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
+      
+      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
+      
+      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+      
+      <div class="flex gap-3">
+        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
+        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+      </div>
+    </div>
+    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
+      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      </button>
+
+      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
+      <p class="text-gray-500 mb-2">React Native Developer</p>
+      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
+      
+      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
+      
+      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+      
+      <div class="flex gap-3">
+        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
+        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+      </div>
+    </div>
+    <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group">
+      <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+      </button>
+
+      <h3 class="text-lg font-bold text-[#1e293b]">Mobile First Corp</h3>
+      <p class="text-gray-500 mb-2">React Native Developer</p>
+      <p class="text-sm text-gray-400 mb-4">Remote • Full-time • $130,000 - $175,000</p>
+      
+      <span class="inline-block bg-[#eff6ff] text-[#1e40af] px-3 py-1 rounded-md text-xs font-bold mb-4">NOT APPLIED</span>
+      
+      <p class="text-sm text-gray-600 mb-6">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+      
+      <div class="flex gap-3">
+        <button class="btn btn-sm btn-outline btn-success normal-case font-bold px-6">INTERVIEW</button>
+        <button class="btn btn-sm btn-outline btn-error normal-case font-bold px-6">REJECTED</button>
+      </div>
+    </div>
+   
+
+    </main>
+    <script src="./script.js"></script>
   </body>
 </html>
