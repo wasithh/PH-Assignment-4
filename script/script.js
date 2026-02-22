@@ -43,7 +43,6 @@ function toggleStyle(clickedId) {
   );
   selectedBtn.classList.add("btn-primary", "text-white");
 
-  // Show/hide sections and trigger the render functions!
   if (clickedId == "interview-btn") {
     allCardSection.classList.add("hidden");
     filterSection.classList.remove("hidden");
@@ -59,7 +58,6 @@ function toggleStyle(clickedId) {
 }
 
 mainContainer.addEventListener("click", function (event) {
-  // INTERVIEW BUTTON CLICKED
   if (event.target.classList.contains("interview-btn-1")) {
     const parentNode = event.target.parentNode.parentNode;
     const companyName = parentNode
@@ -97,14 +95,10 @@ mainContainer.addEventListener("click", function (event) {
 
     calculateCount();
 
-    // Only update the screen if we are looking at a filtered tab
     const activeTab = document.querySelector(".btn-primary").id;
     if (activeTab === "interview-btn") renderInterview();
     if (activeTab === "rejected-btn") renderRejected();
-  }
-
-  // REJECTED BUTTON CLICKED
-  else if (event.target.classList.contains("rejected-btn-1")) {
+  } else if (event.target.classList.contains("rejected-btn-1")) {
     const parentNode = event.target.parentNode.parentNode;
     const companyName = parentNode
       .querySelector(".company-name")
@@ -141,7 +135,6 @@ mainContainer.addEventListener("click", function (event) {
 
     calculateCount();
 
-    // Only update the screen if we are looking at a filtered tab
     const activeTab = document.querySelector(".btn-primary").id;
     if (activeTab === "rejected-btn") renderRejected();
     if (activeTab === "interview-btn") renderInterview();
@@ -149,7 +142,7 @@ mainContainer.addEventListener("click", function (event) {
 });
 
 function renderInterview() {
-  filterSection.innerHTML = ""; // Changed to innerHTML
+  filterSection.innerHTML = "";
 
   // Empty State Check
   if (interviewList.length === 0) {
