@@ -12,7 +12,7 @@ const interviewBtn = document.getElementById("interview-btn");
 const rejectedBtn = document.getElementById("rejected-btn");
 
 const allCardSection = document.getElementById("all-cards");
-const mainContainer = document.querySelector("main");
+const mainContainer = document.body;
 const filterSection = document.getElementById("filtered-section");
 
 function calculateCount() {
