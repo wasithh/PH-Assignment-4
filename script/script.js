@@ -6,6 +6,7 @@ let total = document.getElementById("total-count");
 let interviewCount = document.getElementById("interview-count");
 let rejectedCount = document.getElementById("rejected-count");
 
+const totalJobsText = document.getElementById("total-jobs-text");
 const allBtn = document.getElementById("all-btn");
 const interviewBtn = document.getElementById("interview-btn");
 const rejectedBtn = document.getElementById("rejected-btn");
@@ -18,6 +19,18 @@ function calculateCount() {
   total.innerText = allCardSection.children.length;
   interviewCount.innerText = interviewList.length;
   rejectedCount.innerText = rejectedList.length;
+
+  const activeTab = document.querySelector(".btn-primary");
+
+  if (activeTab) {
+    if (activeTab.id === "all-btn") {
+      totalJobsText.innerText = `${allCardSection.children.length} jobs`;
+    } else if (activeTab.id === "interview-btn") {
+      totalJobsText.innerText = `${interviewList.length} jobs`;
+    } else if (activeTab.id === "rejected-btn") {
+      totalJobsText.innerText = `${rejectedList.length} jobs`;
+    }
+  }
 }
 calculateCount();
 
@@ -55,6 +68,7 @@ function toggleStyle(clickedId) {
     filterSection.classList.remove("hidden");
     renderRejected();
   }
+  calculateCount();
 }
 
 mainContainer.addEventListener("click", function (event) {
@@ -139,6 +153,32 @@ mainContainer.addEventListener("click", function (event) {
     if (activeTab === "rejected-btn") renderRejected();
     if (activeTab === "interview-btn") renderInterview();
   }
+
+  const deleteBtn = event.target.closest(".delete-btn");
+
+  if (deleteBtn) {
+    const card = deleteBtn.closest(".job-card");
+    const companyName = card.querySelector(".company-name").innerText.trim();
+
+    interviewList = interviewList.filter(
+      (item) => item.companyName !== companyName,
+    );
+    rejectedList = rejectedList.filter(
+      (item) => item.companyName !== companyName,
+    );
+
+    card.remove();
+
+    calculateCount();
+
+    const activeTab = document.querySelector(".btn-primary").id;
+    if (activeTab === "interview-btn" && interviewList.length === 0)
+      renderInterview();
+    if (activeTab === "rejected-btn" && rejectedList.length === 0)
+      renderRejected();
+
+    return;
+  }
 });
 
 function renderInterview() {
@@ -159,7 +199,7 @@ function renderInterview() {
     let div = document.createElement("div");
     div.innerHTML = `
       <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group mb-4">
-        <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"></button>
+        <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"><i class="fa-regular fa-trash-can"></i></button>
         <h3 class="company-name text-lg font-bold text-[#1e293b]">${interview.companyName}</h3>
         <p class="job-role text-gray-500 mb-2">${interview.jobRole}</p>
         <p class="text-sm text-gray-400 mb-4">
@@ -197,7 +237,7 @@ function renderRejected() {
     let div = document.createElement("div");
     div.innerHTML = `
       <div class="job-card bg-white border border-gray-100 shadow-sm rounded-xl p-6 relative group mb-4">
-        <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"></button>
+        <button class="btn btn-circle btn-sm btn-ghost absolute top-4 right-4 text-gray-400 hover:text-red-500 border border-gray-200"><i class="fa-regular fa-trash-can"></i></button>
         <h3 class="company-name text-lg font-bold text-[#1e293b]">${reject.companyName}</h3>
         <p class="job-role text-gray-500 mb-2">${reject.jobRole}</p>
         <p class="text-sm text-gray-400 mb-4">
