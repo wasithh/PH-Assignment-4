@@ -1,83 +1,29 @@
-## Welcome To ( সহজ সরল সিম্পল ) Assignment - 4 
-
-
----
-# 📅 Deadline For 60 marks: 23th February, 2026 (11:59 pm ⏱️)
-# 📅 Deadline For 50 marks: 24th February, 2026 (11:59 pm ⏱️)
-# 📅 Deadline For 30 marks: Any time after 24th February.
-
-
-# Main Requirements
-
-## Design Part
-
-## Dashboard
-- Website name and Create a dashboard like figma 
-- The section should be responsive for mobile devices. It is totally up to you. 
-
-## Available Jobs Section
-- A title on the left side, jobs count on the right side 
-- 3 different tab  below the section title 
-- Minimum 8 cards with:
-	- companyName
-	- position
-	- location
-	- type
-	- salary
-	- description
-	- 2 buttons: Interview, Rejected
-- By default all the jobs data will show on All tab, and the Interview, Rejected tab will show “No jobs Available” message with a subtitle below and an icon/image on the above
-
-- The section should be responsive for mobile devices. It is totally up to you.
-
---- 
-
-## Functionalities Part
-- Clicking on Interview button on the card 
-    - will add the data on Interview tab 
-    - add the status as Interview.
-    - Will increase the the count of interview in Dashboard 
-
-- Clicking on Rejected button on the card 
-    - will add the data on Rejected tab 
-    - add the status as Rejected.
-    - Will increase the the count of Rejected in Dashboard
-
-- Enable toggle between Interview and rejected button(you can select Rejected button after clicking on Interview, and Interview button after clicking on Rejected button). It will change the tab and dashboard count also. It will show tab wise jobs count on the right.
-
----
-
-# Challenges Requirements
-- Clicking on the delete button will remove that card from the UI, and the count will be deducted from the dashboard card and the main section.
-- No lorem ipsum text on your website. At least 8 meaningful commits in your project.  
-
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
-
-
 ## Answers to Questions
 
 ### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
+Ans: getElementById is a DOM Selection method that selects an element by it's unique id. On the other hand getElementByClass is a DOM Selection method that selects all the elements that share a specific class name. The difference between these two is that getElementById looks for one unique id attribute whilst getElementByClass looks for a shared class attribute in all elements.
+	querySelector will find and return only the first element on the page that matches my CSS selector. On the other hand querySelectorAll will find and return every element on the page that matches my CSS selector as a NodeList. The key difference here is that querySelector returns an element but querySelectorAll returns a NodeList.
+	 
+
 ### 2. How do you create and insert a new element into the DOM?
+
+Ans: First you have to create the element by using document.createElement(), after that you have to add content or atrributes like innerText. innerHTML or classList, then you have to insert it by using a method like .appendChild() or .append() to attach to an existing parent element on the page.
 
 ### 3. What is Event Bubbling? And how does it work?
 
+Ans: Event Bubbling is a DOM behavior where an event triggered on a specific element (like a click) propagates or spreads through all of it's parent elements climbing upwards the DOM Tree, until it gets to the root. How it wokrs is that if click a child element for example a button, that click will propagate or spread to its parents and it will continue to do so until it reacher the root. It can be stopped using stopPropagation().
+
 ### 4. What is Event Delegation in JavaScript? Why is it useful?
+
+Ans: Event Delegation is a JS pattern where you can attach a single event listerner to a parent element and it will manage events for all it's children. 
+	 It is useful for > 1. Better Performance
+					    2. Handles Dynamic Elements
+					    3. Cleaner Code
 
 ### 5. What is the difference between preventDefault() and stopPropagation() methods?
 
----
+Ans: preventDefault() stops the browsers in built, default action for an element from happening, like stopping an <a> link from navigating to a new page.
+	 stopPropagation() stops the event to "bubbling" up the DOM tree. It prevents parent elements from knowing what happened, meaning their event listeners won't be triggered.
 
 
-**Technology Stack:**
-- HTML
-- CSS (Vanilla/Tailwind/DaisyUI)
-- JavaScript (Vanilla)
-
-
---- 
-
-## What to submit: 
-
-1. GitHub Repository Link: 
-2. Live Site Link: 
